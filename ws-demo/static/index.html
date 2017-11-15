@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>WebSocket</title>
+</head>
+
+<body>
+    <p id="output"></p>
+
+    <script>
+        var loc = window.location;
+
+        var uri = 'ws:';
+
+        if (loc.protocol === 'https:') {
+            uri = 'wss:';
+        }
+        uri += '//' + loc.host;
+        uri += loc.pathname + 'ws';
+        console.log(loc.host)
+        console.log(loc.pathname)
+        ws = new WebSocket(uri)
+
+        ws.onopen = function() {
+            console.log('Connected')
+        }
+
+        ws.onmessage = function(evt) {
+                var out = document.getElementById('output');
+                out.innerHTML += evt.data + '<br>';
+            }
+            /*
+            setInterval(function() {
+                ws.send('Hello, Server!');
+            }, 1000);
+            */
+            /*
+            如何更新指定的数据，前端刚怎么弄
+            */
+            /* 
+            这个在一定条件启动这部分代码 而不是一开始就使用
+            */
+    </script>
+</body>
+
+</html>
