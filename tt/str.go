@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 )
 
 func main() {
@@ -11,6 +12,9 @@ func main() {
 
 	fmt.Println()
 	a := []byte{48, 49}
-	fmt.Printf("%s", string(a))
+	fmt.Printf("%s\n", string(a))
+	n := 32
+	fmt.Printf("%s\n", strconv.FormatUint(uint64(n), 10))
+	fmt.Printf("%s\n", strconv.FormatUint(uint64(n), 16))
 
 }

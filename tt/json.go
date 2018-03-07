@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"time"
 )
 
 // 不支持小写
@@ -27,6 +28,7 @@ type test struct {
 /* 高效的处理过程 */
 
 func main() {
+	fmt.Println(time.Now().String())
 	a := resp{Code: 1, Msg: "hello", Ignore: 35,
 		Data: emd{
 			To: "world",
